@@ -2,7 +2,7 @@ require('./keep_alive'); // Keep-alive serverni ishga tushirish
 const mineflayer = require('mineflayer');
 const { Vec3 } = require('vec3');
 
-const botUsername = 'FN_15';
+const botUsername = 'FN_Glass';
 const botPassword = 'fort54321';
 const admin = 'Umid';
 var mcData;
@@ -48,12 +48,19 @@ function init() {
         }, 3 * 60 * 1000);
 
         setTimeout(() => {
-            bot.chat('/is warp buy');
+            bot.chat('/is warp afk');
         }, 1000);
 
         setTimeout(() => {
             buySand(bot);
         }, 5000);
+    });
+
+    bot.on("whisper", (usernameSender, message) => {
+        if (usernameSender === admin && message.startsWith("! ")) {
+            const command = message.replace("! ", "");
+            bot.chat(command);
+        }
     });
 
     async function buySand(bot) {
