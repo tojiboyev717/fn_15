@@ -115,7 +115,7 @@ function init() {
     }
 
     async function depositSand(bot) {
-        const p1 = new Vec3(5580, 94, -6192);  // Chesting joylashuvi
+        const p1 = new Vec3(5589, 97, -6197);  // Chesting joylashuvi
         let sands = bot.inventory.items().filter(item => item.name === 'sand');
         if (sands.length === 0) return;
 
